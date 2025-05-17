@@ -33,6 +33,7 @@ app.post('/webhook', async (req, res) => {
   } else {
     twiml.message('Sorry, please start by saying "hi"');
   }
+console.log('Replying with TwiML:', twiml.toString());
 
   res.set('Content-Type', 'text/xml');
   res.status(200).send(twiml.toString());
